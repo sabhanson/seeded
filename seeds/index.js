@@ -100,10 +100,10 @@ const plants = [
 
 
 const seed = async ()=>{
-    await sequelize.sync({force:false});
+    await sequelize.sync({force:true});
     await User.bulkCreate(users,{individualHooks:true});
-    await Comment.bulkCreate(comments);
     await Plant.bulkCreate(plants);
+    await Comment.bulkCreate(comments);
     await Upvote.bulkCreate(upvotes);
     console.log("all seeded!")
     process.exit(0);
