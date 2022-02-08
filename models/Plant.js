@@ -4,6 +4,12 @@ const sequelize = require('../config/connection');
 class Plant extends Model {}
 
 Plant.init({
+    id:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+    },
     title: {
         type:DataTypes.STRING,
         allowNull: false,
@@ -18,6 +24,14 @@ Plant.init({
             len:[1,200]
         }
     },
+    UserId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references:{
+            model: 'User',
+            key: 'id'
+        }
+    }
     // file_name: {  //PHOTO 
     //     type:DataTypes.BLOB("long"),
     //     allowNull: false,
@@ -26,4 +40,4 @@ Plant.init({
     sequelize
 })
 
-module.exports=Plant
+module.exports=Plant;
