@@ -6,25 +6,25 @@ const Upvote = require('./Upvote');
 Comment.belongsTo(User);
 
 User.hasMany(Comment,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
 });
 
 Plant.belongsTo(User);
 
 User.hasMany(Plant,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
 });
 
 Plant.hasMany(Comment,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
 });
 
 Plant.hasMany(Upvote,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
 });
 
 User.hasMany(Upvote,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
 });
 
 Upvote.belongsTo(User);
