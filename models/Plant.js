@@ -8,7 +8,7 @@ Plant.init({
         type:DataTypes.STRING,
         allowNull: false,
         validate:{
-            len:[1,30]
+            len:[1,100]
         }
     },
     caption: {
@@ -18,10 +18,10 @@ Plant.init({
             len:[1,200]
         }
     },
-    file_name: {  //PHOTO 
-        type:DataTypes.BLOB("long"),
-        allowNull: false,
-    },
+    // file_name: {  //PHOTO 
+    //     type:DataTypes.BLOB("long"),
+    //     allowNull: false,
+    // },
 },{
     sequelize
 })
