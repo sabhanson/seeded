@@ -1,23 +1,25 @@
-const Comment = require('./Comment');
-const Plant = require('./Plant');
 const User = require('./User');
+const Plant = require('./Plant');
+const Comment = require('./Comment');
 const Upvote = require('./Upvote');
-
-Comment.belongsTo(User);
-
-User.hasMany(Comment,{
-    onDelete:"CASCADE",
-});
-
-Plant.belongsTo(User);
 
 User.hasMany(Plant,{
     onDelete:"CASCADE",
 });
 
+Plant.belongsTo(User);
+
+User.hasMany(Comment,{
+    onDelete:"CASCADE",
+});
+
+Comment.belongsTo(User);
+
 Plant.hasMany(Comment,{
     onDelete:"CASCADE",
 });
+
+Comment.belongsTo(Plant);
 
 Plant.hasMany(Upvote,{
     onDelete:"CASCADE",
