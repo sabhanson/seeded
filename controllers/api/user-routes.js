@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const User = require('../../models/User')
 
@@ -60,3 +61,7 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+// GET route to get a user by id, Auth not needed
+// POST route to create new user, Auth not needed
+
