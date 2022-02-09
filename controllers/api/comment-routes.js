@@ -6,10 +6,10 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       content:req.body.content,
-      UserId: req.session.userId,
+      UserId: req.session.UserId,
     //   PlantId: req.params? - how to specify which plant we want to comment on
     });
-    res.json(newComment);
+    res.status(200).json(newComment);
   } catch (err) {
     res.status(500).json(err);
   }
