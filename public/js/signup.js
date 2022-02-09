@@ -5,7 +5,7 @@ const signupForm = async function(event) {
     const passwordEl = document.querySelector('#password-input-signup');
     const emailEl = document.querySelector('#email-input-signup');
 
-    const response = await fetch('/api/user', {
+    const response = await fetch('/api/user/signup', {
         method: 'POST',
         body: JSON.stringify({
             username: usernameEl.value,
@@ -16,7 +16,7 @@ const signupForm = async function(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/dashboard');
     } else {
         alert('Check your input fields');
     }
