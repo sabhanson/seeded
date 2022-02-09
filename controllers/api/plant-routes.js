@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
   // POST request to share new plant
   router.post('/', withAuth, async (req, res) => {
       try {
+          // userCheck = await .findByPk  or if ===)
       const newPlant = await Plant.create({ 
         title: req.body.title,
         caption: req.body.caption,
