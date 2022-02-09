@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const User = require('../../models/User')
 
-router.post('/', async(req, res) => {
+router.post('/signup', async(req, res) => {
     try {
         const newUser = await User.create({
             username: req.body.username,
@@ -42,9 +42,10 @@ router.post('/login', async(req, res) => {
             req.session.userId = user.id;
             req.session.username = user.username;
             req.session.loggedIn = true;
-
+            console.log("session saved")
             res.status(200).json({ message: "You are now logged in!" });
         })
+        console.log(req.session)
     } catch (err) {
         res.status(400).json({ message: "No account found"});
     }
@@ -52,13 +53,13 @@ router.post('/login', async(req, res) => {
 
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
     } else {
-        res.status(404).end();
+      res.status(404).end();
     }
-});
+  });
 
 module.exports = router;
 

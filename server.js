@@ -12,9 +12,9 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'secret password',
+  secret: 'secretpassword',
   cookie: {
-    maxAge: 3600,
+    maxAge: 6000000,
     httpOnly:true,
     secure:false,
     sameSite: 'strict',
@@ -42,7 +42,7 @@ app.use(require('./controllers/'));
 
 
 
-sequelize.sync({ force: true }).then(function() {
+sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
     console.log(`App listening on PORT ${PORT}`);
     });
