@@ -1,21 +1,21 @@
-<div class="card">
-  <div class="card-header background-color">
-    <h2>Log in</h2>
-  </div>
-  <div id="login" role="tabpanel">
-    <form id="login-form" class="card-body background-color">
-      <div>
-        <label for="username-input-login">Username</label>
-        <input type="text" id="username-input-login" />
-      </div>
-      <div>
-        <label for="password-input-signup">Password</label>
-        <input type="password" id="password-input-login" />
-      </div>
-      <button type="submit" id="signup-btn" class="btn" >Login</button>
-      <a href="/signup">Don't have an account? Signup here</a>
-    </form>
-  </div>
-</div>
+    <div class="card mx-auto text-center col-sm-12 col-md-6 col-lg-4">
+        <div class="card-header">
+          Log In
+        </div>
+        <div class="card-body d-grid gap-2">
+            <div>
+              <input type="text" placeholder="enter your username..." id="username-input-login" />
+            </div>
+            <div>
+              <input type="password" placeholder="enter your password..." id="password-input-login" />
+            </div>
+            <button type="submit" id="signup-btn" class="btn" >Sign In</button>
+        </div>
+        <div class="card-footer text-muted">
+        </div>
+    </div>
+    <div class="mx-auto text-center">
+        <a href="/signup">Don't have an account? Sign Up here!</a>
+    </div>
 
 <script src="/js/login.js"></script>
