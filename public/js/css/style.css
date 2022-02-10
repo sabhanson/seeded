@@ -1,5 +1,12 @@
---darkgreen: #134611
---truegreen: #3E8914
---sagegreen: #7FB069
---lightbrown: #E3C594
---medbrown: #99621E
+:root {
+--darkgreen: #134611;
+--truegreen: #3E8914;
+--sagegreen: #7FB069;
+--lightbrown: #E3C594;
+--medbrown: #99621E;
+}
+
+body{
+    background-color: var(--lightbrown);
+    color: black;
+}
