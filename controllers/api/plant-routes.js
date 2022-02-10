@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { Plant } = require('../../models/');
-const withAuth = require('../../utils/auth');
-
 
   // POST request to share new plant
-  router.post('/', withAuth, async (req, res) => {
+  router.post('/', async (req, res) => {
       try {
           // userCheck = await .findByPk  or if ===)
       const newPlant = await Plant.create({ 
@@ -20,9 +18,9 @@ const withAuth = require('../../utils/auth');
   });
 
   // PUT request to update title and caption, search by id
-  router.put('/:id', withAuth, async (req, res) => {
+  router.put('/:id', async (req, res) => {
     try {
-      const [affectedPlant] = await Plant.update(req.body, {
+      const affectedPlant = await Plant.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -39,20 +37,22 @@ const withAuth = require('../../utils/auth');
   });
 
   // DELETE request to delete entire posting
-  router.delete('/:id', withAuth, async (req, res) => {
+  router.delete('/:id', async (req, res) => {
     try {
-      const [affectedPlant] = Plant.destroy({
+      const affectedPlant = Plant.destroy({
         where: {
           id: req.params.id,
         },
       });
   
-      if (affectedPlant > 0) {
-        res.status(200).end();
-      } else {
+      if (!affectedPlant) {
         res.status(404).end();
+      } else {
+        res.status(200).end();
       }
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+  module.exports = router;

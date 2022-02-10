@@ -7,6 +7,7 @@ var myWidget = cloudinary.createUploadWidget({
   cloudName: 'megs425', 
   uploadPreset: 'qnl1uzql'}, (error, result) => { 
     console.log(result)
+  uploadPreset: 'ml_default'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
     }
@@ -29,3 +30,4 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">  
 </script>
  --}}
+<h1>Welcome to the profile page</h1>

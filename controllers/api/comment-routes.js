@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment, Plant } = require('../../models/');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/withAuth');
+
 // POST request to post new comment on specified plant
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -15,23 +16,23 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-module.exports = router;
-
 // DELETE request to delete a specific comment on a specific plant
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const [affectedComment] = Comment.destroy({
+      const affectedComment = Comment.destroy({
         where: {
           id: req.params.id,
         },
       });
   
-      if (affectedComment > 0) {
-        res.status(200).end();
-      } else {
+      if (!affectedComment) {
         res.status(404).end();
+      } else {
+        res.status(200).end();
       }
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+  module.exports = router;
