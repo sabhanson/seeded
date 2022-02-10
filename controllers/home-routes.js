@@ -1,6 +1,9 @@
 const router = require('express').Router();
 
+<<<<<<< HEAD
+=======
 //Get route to sign up for an account
+>>>>>>> fa3183eda9d620f592503e95acc4ef2ea8e21bd1
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');

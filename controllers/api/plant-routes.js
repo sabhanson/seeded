@@ -4,6 +4,7 @@ const { Plant } = require('../../models/');
   // POST request to share new plant
   router.post('/', async (req, res) => {
       try {
+          // userCheck = await .findByPk  or if ===)
       const newPlant = await Plant.create({ 
         title: req.body.title,
         caption: req.body.caption,
