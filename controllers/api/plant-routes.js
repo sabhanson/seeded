@@ -4,6 +4,7 @@ const { Plant } = require('../../models/');
   // POST request to share new plant
   router.post('/', async (req, res) => {
       try {
+          // userCheck = await .findByPk  or if ===)
       const newPlant = await Plant.create({ 
         title: req.body.title,
         caption: req.body.caption,
@@ -19,7 +20,7 @@ const { Plant } = require('../../models/');
   // PUT request to update title and caption, search by id
   router.put('/:id', async (req, res) => {
     try {
-      const [affectedPlant] = await Plant.update(req.body, {
+      const affectedPlant = await Plant.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -44,10 +45,10 @@ const { Plant } = require('../../models/');
         },
       });
   
-      if (affectedPlant > 0) {
-        res.status(200).end();
-      } else {
+      if (!affectedPlant) {
         res.status(404).end();
+      } else {
+        res.status(200).end();
       }
     } catch (err) {
       res.status(500).json(err);
