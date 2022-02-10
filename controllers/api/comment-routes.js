@@ -19,16 +19,16 @@ router.post('/', withAuth, async (req, res) => {
 // DELETE request to delete a specific comment on a specific plant
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const [affectedComment] = Comment.destroy({
+      const affectedComment = Comment.destroy({
         where: {
           id: req.params.id,
         },
       });
   
-      if (affectedComment > 0) {
-        res.status(200).end();
-      } else {
+      if (!affectedComment) {
         res.status(404).end();
+      } else {
+        res.status(200).end();
       }
     } catch (err) {
       res.status(500).json(err);
