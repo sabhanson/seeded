@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { redirect } = require('express/lib/response');
 // const withAuth = require('../utils/withAuth');
 const {Plant, Comment, Upvote, User} = require('../models');
 
@@ -20,6 +21,10 @@ router.get('/', async(req, res) => {
     } catch (err) {
         res.redirect('login');
     }   
+});
+
+router.get('/newPlant', async(req, res) => {
+     res.render('newPlant');
 });
 
 //Rendering the profile of a user other than the session user
