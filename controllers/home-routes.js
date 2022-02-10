@@ -1,9 +1,18 @@
 const router = require('express').Router();
 
+router.get('/', (req, res) =>{
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+}
+    res.render('landing')
+})
+
+
 //Get route to sign up for an account
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     }
 
