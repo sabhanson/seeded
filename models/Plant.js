@@ -20,10 +20,10 @@ Plant.init({
         }
     },
 
-    // file_name: {  //PHOTO 
-    //     type:DataTypes.BLOB("long"),
-    //     allowNull: false,
-    // },
+    file_name: { 
+        type:DataTypes.STRING,
+        allowNull: false,
+    },
 },{
     sequelize
 })

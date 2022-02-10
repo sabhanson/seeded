@@ -2,17 +2,20 @@ const router = require('express').Router();
 const { Plant } = require('../../models/');
 
   // POST request to share new plant
+  //api/plant/
   router.post('/', async (req, res) => {
-      try {
+       console.log(req.body)
+       try {
           // userCheck = await .findByPk  or if ===)
+       
       const newPlant = await Plant.create({ 
         title: req.body.title,
         caption: req.body.caption,
-        //add photo
-        UserId: req.session.UserId
+        file_name: req.body.file_name,
+        UserId: req.session.userId
     });
       res.status(200).json(newPlant);
-    } catch (err) {
+    } catch (err) { 
       res.status(500).json(err);
     }
   });
