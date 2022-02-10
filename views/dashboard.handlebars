@@ -26,23 +26,18 @@
           <p class="card-text">{{content}}</p>
         </div>
         {{/each}}
-        <div class="input-group mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="enter a comment..."
-            aria-label="Recipient's username"
-            aria-describedby="button-addon2"
-          />
+        <form class="input-group mb-3 comment-form">
+          <input type="hidden" name="plant-id" value="{{id}}">
+          <textarea name = "comment-body" class="form-input"></textarea>
           <button
             class="btn btn-outline-secondary"
-            type="button"
+            type="submit"
             id="button-addon2"
           >Submit</button>
-        </div>
+        </form>
 
       </div>
     </div>
 {{/each}}
   </div>
-  hello
+  <script src="/js/comment.js"></script>
