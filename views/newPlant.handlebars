@@ -9,11 +9,26 @@
                     cloudName: 'megs425',
                     uploadPreset: 'qnl1uzql'
                 }, (error, result) => {
-                    console.log(result)
-                    uploadPreset: 'ml_default'
-                }, (error, result) => {
+                    console.log(error, result)
                     if (!error && result && result.event === "success") {
                         console.log('Done! Here is the image info: ', result.info);
+                        const plantTitle = document.querySelector('#new-plant-title').value
+                        const plantCaption = document.querySelector('#new-plant-caption').value
+                        const newPlant = {
+                            title: plantTitle,
+                            caption: plantCaption,
+                            file_name: result.info.url,
+                        }
+                        document.querySelector('#new-plant-title').value = ""
+                        document.querySelector('#new-plant-caption').value = ""
+                        console.log(newPlant)
+                        fetch("/api/plant/", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                        body: JSON.stringify(newPlant)
+                        })
                     }
                 }
                 )
@@ -31,3 +46,13 @@
         </div>
     </div>
 </div>
+
+{{!--
+need to isolate the unique URL for each image, have it assigned to the UserId of the the user that uploaded
+uploaded photos from a specific user should render on their profile page
+upload ALL photos from ALL users to the main dashboard
+
+userId comes from session
+
+
+--}}
