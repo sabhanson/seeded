@@ -1,2 +1,41 @@
-<h1>Welcome to the dashboard</h1>
+{{! this is the basic card template to render each plant post }}
 
+<h1>Welcome to the dashboard, you'll see ALL posts here</h1>
+
+{{!-- this is the main div that contains all plant cards, gap of 5 to create margins between the cards --}}
+<div class="d-grid gap-5">
+
+    {{!-- this is an individual plant card --}}
+  <div class="mx-auto col-sm-12 col-md-8 col-lg-8">
+
+    <div class="card mx-auto">
+      <div class="card-body" style="border: 3px solid black;">
+        <h3>Username</h3>
+        <img src="/assets/plant2.jpeg" class="card-img-top" alt="..." />
+        <p class="card-text">This will be the caption for the picture above</p>
+      </div>
+      <div class="card-body uproots">
+        <p class="card-text">🌱 5 uproots</p>
+      </div>
+      <div class="card-body all-comments" style="border: 2px solid black;">
+        <p class="card-text">These will be comments for the picture above</p>
+        <p class="card-text">These will be comments for the picture above</p>
+        <p class="card-text">These will be comments for the picture above</p>
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="enter a comment..."
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
