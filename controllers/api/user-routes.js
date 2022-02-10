@@ -1,7 +1,7 @@
-
 const router = require('express').Router();
 const User = require('../../models/User')
 
+//This is the route for creating a new user profile
 router.post('/signup', async(req, res) => {
     try {
         const newUser = await User.create({
@@ -22,6 +22,7 @@ router.post('/signup', async(req, res) => {
     }
 });
 
+//This is the route for existing accounts to log in
 router.post('/login', async(req, res) => {
     try {
         const user = await User.findOne({
@@ -51,6 +52,7 @@ router.post('/login', async(req, res) => {
     }
 });
 
+//This is the route for users to log out from the application
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -62,7 +64,3 @@ router.post('/logout', (req, res) => {
   });
 
 module.exports = router;
-
-// GET route to get a user by id, Auth not needed
-// POST route to create new user, Auth not needed
-
