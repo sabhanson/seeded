@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { Plant } = require('../../models/');
-const withAuth = require('../../utils/auth');
-
 
   // POST request to share new plant
-  router.post('/', withAuth, async (req, res) => {
+  router.post('/', async (req, res) => {
       try {
       const newPlant = await Plant.create({ 
         title: req.body.title,
@@ -19,7 +17,7 @@ const withAuth = require('../../utils/auth');
   });
 
   // PUT request to update title and caption, search by id
-  router.put('/:id', withAuth, async (req, res) => {
+  router.put('/:id', async (req, res) => {
     try {
       const [affectedPlant] = await Plant.update(req.body, {
         where: {
@@ -38,9 +36,9 @@ const withAuth = require('../../utils/auth');
   });
 
   // DELETE request to delete entire posting
-  router.delete('/:id', withAuth, async (req, res) => {
+  router.delete('/:id', async (req, res) => {
     try {
-      const [affectedPlant] = Plant.destroy({
+      const affectedPlant = Plant.destroy({
         where: {
           id: req.params.id,
         },
@@ -55,3 +53,5 @@ const withAuth = require('../../utils/auth');
       res.status(500).json(err);
     }
   });
+
+  module.exports = router;
