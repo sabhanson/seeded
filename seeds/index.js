@@ -30,25 +30,41 @@ const plants = [
         title:"Golden Pothos",
         caption:"it's cool",
         UserId:1,
+<<<<<<< HEAD
         file_name: "12.jpg"
+=======
+        file_name: '123.jpeg'
+>>>>>>> dev
     },
     {
         title:"Tradescantia",
         caption:"i love this plant!!!!",
         UserId:2,
+<<<<<<< HEAD
         file_name: "12.jpg"
+=======
+        file_name: '456.jpeg'
+>>>>>>> dev
     },
     {
         title:"Megbert",
         caption:"cool plant! :)",
         UserId:3,
+<<<<<<< HEAD
         file_name: "12.jpg"
+=======
+        file_name: '789.jpeg'
+>>>>>>> dev
     },
     {
         title:"Lancifolia",
         caption:"rattlesnake",
         UserId:4,
+<<<<<<< HEAD
         file_name: "12.jpg"
+=======
+        file_name: '112.jpeg'
+>>>>>>> dev
     },
 ]
 
