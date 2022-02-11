@@ -10,6 +10,7 @@ router.get('/', withAuthFront, async (req, res)=>{
         const plants = plantData.map((plant) => plant.get({ plain: true}));
         console.log(plants[0].Upvotes);
         res.render('dashboard', {
+            layout: 'loggedin',
             plants: plants
         });
     } catch (err) {

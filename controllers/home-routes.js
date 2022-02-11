@@ -31,4 +31,10 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+router.get('/nouser', (req,res)=> {
+    res.render('nouser'), {
+        layout: 'loggedin'
+    }
+})
+
 module.exports = router;

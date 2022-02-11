@@ -16,6 +16,7 @@ router.get('/', async(req, res) => {
         const plants = userData.map((plant) => plant.get({ plain: true}));
         console.log(plants);
         res.render('profile', {
+            layout: 'loggedin',
             plants: plants
     });
     } catch (err) {
@@ -40,11 +41,14 @@ router.get('/:id', async(req, res) => {
         const plants = userData.map((plant) => plant.get({ plain: true}));
         console.log(plants);
         res.render('searchprofile', {
+            layout: 'loggedin',
             plants: plants
     });
     } catch (err) {
         res.redirect('login');
     }   
 })
+
+
 
 module.exports = router;
