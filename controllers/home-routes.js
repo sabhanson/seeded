@@ -9,6 +9,15 @@ router.get('/', (req, res) =>{
     res.render('landing')
 })
 
+router.get('/about', (req, res)=>{
+  if(req.session.loggedIn){
+    res.render('about',{
+      layout: 'loggedin'
+    })
+  } else {
+    res.render('about')
+  }
+})
 
 //Get route to sign up for an account
 
