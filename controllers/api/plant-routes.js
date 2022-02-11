@@ -45,6 +45,7 @@ const { Plant } = require('../../models/');
       const affectedPlant = Plant.destroy({
         where: {
           id: req.params.id,
+          UserId: req.session.userId
         },
       });
   
