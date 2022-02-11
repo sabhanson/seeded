@@ -19,11 +19,10 @@ Plant.init({
             len:[1,200]
         }
     },
-
-    // file_name: { 
-    //     type:DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    file_name: { 
+        type:DataTypes.STRING,
+        allowNull: false,
+    }
 },{
     sequelize
 })
