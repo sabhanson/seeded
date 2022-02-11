@@ -1,24 +1,23 @@
-const searchBarHandler = async function (event) {
+
+function searchBarHandler(event) {
     event.preventDefault();
-
-    // const searchInput = document.querySelector('#search-input').value
-
-    const response = await fetch('/api/user/userlookup', {
-        method: 'GET'
+     
+    fetch('/api/user/userlookup')
+    .then(function (response) {
+        return response.json();
     })
-    if (response.ok){
-        document.location.replase('/profile')
-    }
-    console.log(response)
-    for (let i = 0; i < response.length; i++) {
-        console.log(response[i].username)
-        // if (userArr === searchInput){
-        //     document.location.replase(`/profile${}`)
-        // } else {
-        //     alert('uhoh')
-        // }
-    }
-    
+    .then(function (data) {
+        const searchInput = document.querySelector('#search-input').value;
+        const foundUser = data.find(user => user.username === searchInput)
+        console.log(foundUser)
+            if (foundUser) {
+                document.location.replace(`/profile/${foundUser.id}`)
+            } else {
+                document.location.replace('/nouser')
+            }
+    } 
+);
 }
 
 document.querySelector('#search-btn').addEventListener('click', searchBarHandler);
+
