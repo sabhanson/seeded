@@ -1,4 +1,3 @@
-
 function searchBarHandler(event) {
     event.preventDefault();
      

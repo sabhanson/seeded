@@ -5,22 +5,22 @@ const {User,Plant,Comment,Upvote} = require("../models");
 const users = [
     {
         username: "sabthegoodwitch",
-        password: 'fsdfasgasdfg',
+        password: 'password',
         email: 'sabhanson7@gmail.com'
     },
     {
         username: "plantasia",
-        password: 'jkfhahjksd',
+        password: 'password',
         email: 'isaac.petersen5@gmail.com'
     },
     {
-        username: "bryophytebb",
-        password: 'kjlsdfhsssad',
+        username: "mossbb",
+        password: 'password',
         email: '425megs@gmail.com'
     },
     {
         username: "kony2012",
-        password: 'sdfasdf',
+        password: 'password',
         email: 'andrewtranmsw@gmail.com'
     }
 ]
@@ -32,13 +32,13 @@ const plants = [
         UserId:1
     },
     {
-        title:"Wandering Jew",
-        caption:"this name is derogatory maybe",
+        title:"Tradescantia",
+        caption:"i love this plant!!!!",
         UserId:2
     },
     {
         title:"Megbert",
-        caption:"thick thighs, brown eyes",
+        caption:"cool plant! :)",
         UserId:3
     },
     {
@@ -50,22 +50,22 @@ const plants = [
 
 const comments = [
     {
-        content: "from sab to meg",
+        content: "this is a nice thing",
         PlantId: 3,
         UserId: 1
     },
     {
-        content: "from meg to andrew",
+        content: "cute af",
         PlantId: 4,
         UserId: 3
     },
     {
-        content: "from andrew to isaac",
+        content: "lemme prop??",
         PlantId: 2,
         UserId: 4
     },
     {
-        content: "from isaac to sab",
+        content: "send nodes! or else",
         PlantId: 1,
         UserId: 2
     }
