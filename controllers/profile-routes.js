@@ -33,18 +33,17 @@ router.get('/newPlant', async(req, res) => {
 //Rendering the profile of a user other than the session user
 router.get('/:id', async(req, res) => {
     try {
-        const userData = await Plant.findAll({
-            include: [Comment, Upvote, User],
+        const userData = await User.findByPk(req.params.id, {
+            include: [{model: Plant, include: [{model: Comment, include: [User]} , User, Upvote]}],
             where: {
                 userId: req.params.id,
             },
         });
 
-        const plants = userData.map((plant) => plant.get({ plain: true}));
-        console.log(plants);
+        const user = userData.get({ plain: true});
         res.render('searchprofile', {
             layout: 'loggedin',
-            plants: plants
+            user: user
     });
     } catch (err) {
         res.redirect('login');
