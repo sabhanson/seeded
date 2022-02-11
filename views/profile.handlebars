@@ -3,13 +3,13 @@
 <div class="d-grid gap-5">
   {{#each user.Plants}}
   {{! this is the basic card template to render each plant post }}
-  <div class="mx-auto col-sm-12 col-md-8 col-lg-8">
+  <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
     <div class="card mx-auto">
       <div class="card-body" style="border: 3px solid black;">
         <h3>{{title}}</h3>
         <a class="trash-plant" href="#" data-plantid="{{id}}"><img
             src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" /></a>
-        <img src="{{file_name}}" class="card-img-top" alt="..." />
+        <img src="{{file_name}}" class="card-img-top img-fluid" alt="..." />
         <p class="card-text">{{caption}}</p>
       </div>
       <div class="card-body uproots">
