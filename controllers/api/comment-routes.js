@@ -4,11 +4,11 @@ const withAuth = require('../../utils/withAuth');
 
 // POST request to post new comment on specified plant
 router.post('/', async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   try {
     const newComment = await Comment.create({
       content: req.body.comment,
-      UserId: req.session.UserId,
+      UserId: req.session.userId,
       PlantId: req.body.plantId
     //   PlantId: req.params? - how to specify which plant we want to comment on
     });
@@ -25,6 +25,7 @@ router.delete('/:id', async (req, res) => {
       const affectedComment = Comment.destroy({
         where: {
           id: req.params.id,
+          UserId: req.session.userId
         },
       });
   
