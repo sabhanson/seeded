@@ -24,6 +24,7 @@
         {{#each Comments}}
         <div class="card-body all-comments" style="border: 2px solid black;">
           <p class="card-text">{{content}}</p>
+          <a class="trash-btn" id= "123" href="#" data-commentid="{{id}}"><img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/></a>
         </div>
         {{/each}}
         <form class="input-group mb-3 comment-form">
@@ -41,3 +42,4 @@
 {{/each}}
   </div>
   <script src="/js/comment.js"></script>
+  <script src="/js/deleter.js"></script>
