@@ -29,22 +29,26 @@ const plants = [
     {
         title:"Golden Pothos",
         caption:"it's cool",
-        UserId:1
+        UserId:1,
+        file_name: '123.jpeg'
     },
     {
         title:"Tradescantia",
         caption:"i love this plant!!!!",
-        UserId:2
+        UserId:2,
+        file_name: '456.jpeg'
     },
     {
         title:"Megbert",
         caption:"cool plant! :)",
-        UserId:3
+        UserId:3,
+        file_name: '789.jpeg'
     },
     {
         title:"Lancifolia",
         caption:"rattlesnake",
-        UserId:4
+        UserId:4,
+        file_name: '112.jpeg'
     },
 ]
 

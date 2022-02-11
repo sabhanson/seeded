@@ -6,25 +6,28 @@ const {Plant, Comment, Upvote, User} = require('../models');
 //Renders the session user's profile
 router.get('/', async(req, res) => {
     try {
-        const userData = await Plant.findAll({
-            include: [Comment, Upvote, User],
+        const userData = await User.findByPk(req.session.userId, {
+            include: [{model: Plant, include: [{model: Comment, include: [User]} , User, Upvote]}],
             where: {
                 userId: req.session.userId,
             },
         });
 
-        const plants = userData.map((plant) => plant.get({ plain: true}));
+        const user = userData.get({ plain: true});
         res.render('profile', {
             layout: 'loggedin',
-            plants: plants
+            user: user
     });
     } catch (err) {
+        console.log(err)
         res.redirect('login');
     }   
 });
 
 router.get('/newPlant', async(req, res) => {
-     res.render('newPlant');
+     res.render('newPlant', {
+         layout:'loggedin'
+     } );
 });
 
 //Rendering the profile of a user other than the session user
