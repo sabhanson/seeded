@@ -6,13 +6,13 @@ const { Plant } = require('../../models/');
   router.post('/', async (req, res) => {
        console.log(req.body)
        try {
-          // userCheck = await .findByPk  or if ===)
        
       const newPlant = await Plant.create({ 
         title: req.body.title,
         caption: req.body.caption,
         file_name: req.body.file_name,
-        UserId: req.session.userId
+        UserId: req.session.userId,
+        username: req.session.username
     });
       res.status(200).json(newPlant);
     } catch (err) { 
