@@ -1,5 +1,9 @@
 <div class="d-flex justify-content-center">
     <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <input type="text" id="new-plant-title" class="card-title" placeholder="You must have a title"></input>
+            <input type="text" id="new-plant-caption" class="card-text" placeholder="You must have a caption"></input>
+        </div>
         <button id="upload_widget" class="cloudinary-button">
             <input src='/assets/add.png' class="card-img-top" type="image" id="new=plant-img">
             <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
@@ -39,20 +43,6 @@
             </script>
             </input>
         </button>
-        <div class="card-body">
-            <input type="text" id="new-plant-title" class="card-title" placeholder="Title"></input>
-            <input type="text" id="new-plant-caption" class="card-text" placeholder="Caption..."></input>
-            <a href="/profile" id="create-plant" class="btn btn-primary">Post</a>
-        </div>
+            <a href="/profile" id="create-plant" class="btn btn-primary">Check out your new post!</a>
     </div>
 </div>
-
-{{!--
-need to isolate the unique URL for each image, have it assigned to the UserId of the the user that uploaded
-uploaded photos from a specific user should render on their profile page
-upload ALL photos from ALL users to the main dashboard
-
-userId comes from session
-
-
---}}
