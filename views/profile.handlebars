@@ -1,0 +1,38 @@
+<h1>Welcome to {{user.username}}'s profile page</h1>
+{{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
+<div class="d-grid gap-5">
+  {{#each user.Plants}}
+  {{! this is the basic card template to render each plant post }}
+  <div class="mx-auto col-sm-12 col-md-8 col-lg-8">
+    <div class="card mx-auto">
+      <div class="card-body" style="border: 3px solid black;">
+        <h3>{{title}}</h3>
+        <a class="trash-plant" href="#" data-plantid="{{id}}"><img
+            src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" /></a>
+        <img src="{{file_name}}" class="card-img-top" alt="..." />
+        <p class="card-text">{{caption}}</p>
+      </div>
+      <div class="card-body uproots">
+        {{#each Upvotes}}
+        <p class="card-text">🌱 {{content}} uproots</p>
+        {{/each}}
+      </div>
+      {{#each Comments}}
+      <div class="card-body all-comments" style="border: 2px solid black;">
+        <p class="card-text"><strong>{{User.username}}</strong>: {{content}}</p>
+        <a class="trash-comment" href="#" data-commentid="{{id}}"><img
+            src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" /></a>
+      </div>
+      {{/each}}
+      <form class="input-group mb-3 comment-form">
+        <input type="hidden" name="plant-id" value="{{id}}" />
+        <textarea name="comment-body" class="form-input"></textarea>
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+      </form>
+
+    </div>
+  </div>
+  {{/each}}
+</div>
+<script src="/js/comment.js"></script>
+<script src="/js/deleter.js"></script>
