@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 });
 
 // DELETE request to delete a specific comment on a specific plant
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
       const affectedComment = Comment.destroy({
         where: {
