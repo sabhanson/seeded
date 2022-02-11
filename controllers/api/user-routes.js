@@ -2,6 +2,19 @@ const router = require('express').Router();
 const User = require('../../models/User')
 
 //This is the route for creating a new user profile
+
+router.get('/userlookup', async (req, res) => {
+    try {
+        const allUsers = await User.findAll()
+
+        const users = allUsers.map((user) => user.get({ plain: true}))
+
+        res.json(users)
+    } catch(err){
+        res.status(500).json(err)
+    }
+})
+
 router.post('/signup', async(req, res) => {
     try {
         const newUser = await User.create({

@@ -19,7 +19,7 @@ const commentFormHandler = async function (event){
     if (response.ok){
         document.location.reload()
     } else {
-        alert('sum ting wong')
+        alert('bad comment!')
     }
     
 };
