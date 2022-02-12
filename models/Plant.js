@@ -22,6 +22,10 @@ Plant.init({
     file_name: { 
         type:DataTypes.STRING,
         allowNull: false,
+    },
+    upVote_counter:{
+        type:DataTypes.INTEGER,
+        allowNull: true
     }
 },{
     sequelize

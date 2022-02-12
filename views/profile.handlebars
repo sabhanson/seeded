@@ -13,9 +13,7 @@
         <p class="card-text">{{caption}}</p>
       </div>
       <div class="card-body uproots">
-        {{#each Upvotes}}
-        <p class="card-text">🌱 {{content}} uproots</p>
-        {{/each}}
+        <p class="card-text"><a class="upVote" data-plantid="{{id}}">🌱</a> {{upVote_counter}} uproots</p>
       </div>
       {{#each Comments}}
       <div class="card-body all-comments" style="border: 2px solid black;">
@@ -36,3 +34,4 @@
 </div>
 <script src="/js/comment.js"></script>
 <script src="/js/deleter.js"></script>
+<script src="/js/upvote.js"></script>
