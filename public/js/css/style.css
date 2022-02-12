@@ -12,7 +12,6 @@
 
 body{
     background-color: var(--lightbrown);
-    color: black;
 }
 
 .btn-style {
@@ -40,9 +39,23 @@ a {
    width: 300px;
 }
 
+.comment-div {
+    display: flex;
+    justify-content: center;
+}
+
+.uproots {
+    padding-bottom: 0;
+}
+
+.uproot-style {
+    padding: 1% 0% 0% 12%;
+}
+
 .comment-input {
-    border-radius: 20px;
-    width: 85%;
+    border-top-left-radius: 7px !important;
+    border-bottom-left-radius: 7px !important;
+    width: 60%;
 }
 
 .comment-btn {
@@ -58,4 +71,36 @@ a {
     color: white;
     border-radius: 10px;
     width: 180px;
+}
+
+.cloudinary-button {
+    background-color: var(--sagegreen) !important;
+}
+
+.comment-style {
+    border: 2px solid black;
+    justify-content:space-between;
+    border-radius: 10px;
+    background-color: var(--sagegreen);
+    padding: .4rem;
+    margin: 0% 12% 0% 12%;
+}
+
+.post-card {
+    margin: 8% 10% 0% 10%;
+    border: 4px solid black;
+    border-radius: 15px;
+    background-color: var(--sagegreen);
+}
+
+.plant-div {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 1px 1px 13px var(--medbrown);
+    border: 2px solid black;
+}
+
+.navbar {
+    justify-content: flex-end;
 }
