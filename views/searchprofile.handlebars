@@ -5,19 +5,21 @@
   {{#each user.Plants}}
     {{! this is the basic card template to render each plant post }}
     <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
-      <div class="card mx-auto">
-        <div class="card-body" style="border: 3px solid black;">
+      <div class="card plant-div">
+        <div class="card-body post-card">
           <h3>{{title}}</h3>
           <img src="{{file_name}}" class="card-img-top" alt="..." />
           <p class="card-text">{{caption}}</p>
         </div>
         <div class="card-body uproots">
-          {{#each Upvotes}}
-            <p class="card-text">🌱 {{content}} uproots</p>
-          {{/each}}
+
+          <p class="uproot-style"><a class="upVote" data-plantid="{{id}}">🌱</a>
+            {{upVote_counter}}
+            uproots</p>
+
         </div>
         {{#each Comments}}
-          <div class="card-body all-comments" style="border: 2px solid black;">
+          <div class="card-body all-comments comment-style d-flex mt-1 mb-1">
             <p class="card-text"><strong>{{User.username}}</strong>:
               {{content}}</p>
             <a class="trash-comment" href="#" data-commentid="{{id}}"><img
@@ -25,11 +27,16 @@
               /></a>
           </div>
         {{/each}}
-        <form class="input-group mb-3 comment-form">
+        <form class="input-group comment-div mb-3 pt-2 comment-form">
           <input type="hidden" name="plant-id" value="{{id}}" />
-          <textarea name="comment-body" class="form-input"></textarea>
+          <input
+            placeholder="enter a comment..."
+            name="comment-body"
+            class="comment-input"
+            type="text"
+          />
           <button
-            class="btn btn-outline-secondary"
+            class="comment-btn"
             type="submit"
             id="button-addon2"
           >Submit</button>
@@ -40,3 +47,5 @@
   {{/each}}
 </div>
 <script src="/js/comment.js"></script>
+<script src="/js/upvote.js"></script>
+<script src="/js/deleter.js"></script>
