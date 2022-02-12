@@ -5,7 +5,10 @@ const withAuthFront = require('../utils/withAuthFront')
 router.get('/', withAuthFront, async (req, res)=>{
     try {
         const plantData = await Plant.findAll({
-            include: [{model:Comment, include: [User]}, Upvote, User]
+            include: [{model:Comment, include: [User]}, Upvote, User],
+            order: [
+                ['id', 'DESC'],
+            ],
         });
         const plants = plantData.map((plant) => plant.get({ plain: true}));
 
