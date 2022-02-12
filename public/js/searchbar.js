@@ -20,3 +20,4 @@ function searchBarHandler(event) {
 document
   .querySelector("#search-btn")
   .addEventListener("click", searchBarHandler);
+
