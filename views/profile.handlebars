@@ -1,25 +1,25 @@
-<h1>Welcome to {{user.username}}'s profile page</h1>
+<h1>Welcome to {{user.username}}'s Greenhouse</h1>
 {{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
 <div class="d-grid gap-5">
   {{#each user.Plants}}
     {{! this is the basic card template to render each plant post }}
     <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
-      <div class="card mx-auto">
-        <div class="card-body" style="border: 3px solid black;">
+      <div class="card plant-div">
+        <div class="card-body post-card">
           <h3>{{title}}</h3>
           <a class="trash-plant" href="#" data-plantid="{{id}}"><img
               src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"
             /></a>
-          <img src="{{file_name}}" class="card-img-top img-fluid" alt="..." />
+          <img src="{{file_name}}" class="card-img-top" alt="..." />
           <p class="card-text">{{caption}}</p>
         </div>
         <div class="card-body uproots">
           {{#each Upvotes}}
-            <p class="card-text">🌱 {{content}} uproots</p>
+            <p class="uproot-style">🌱 {{content}} uproots</p>
           {{/each}}
         </div>
         {{#each Comments}}
-          <div class="card-body all-comments d-flex mt-1 mb-1" style="border: 2px solid black; justify-content:space-between; border-radius: 10px; background-color: var(--sagegreen);">
+          <div class="card-body all-comments comment-style d-flex mt-1 mb-1">
             <p class="card-text"><strong>{{User.username}}</strong>:
               {{content}}</p>
             <a class="trash-comment" href="#" data-commentid="{{id}}"><img
@@ -27,15 +27,14 @@
               /></a>
           </div>
         {{/each}}
-        <form class="input-group mb-3 comment-form">
+        <form class="input-group comment-div mb-3 pt-2 comment-form">
           <input type="hidden" name="plant-id" value="{{id}}" />
           <input
             placeholder="enter a comment..."
             name="comment-body"
-            class="form-input comment-input"
+            class="comment-input"
             type="text"
           />
-          {{! <textarea name="comment-body" class="form-input"></textarea> }}
           <button
             class="comment-btn"
             type="submit"
