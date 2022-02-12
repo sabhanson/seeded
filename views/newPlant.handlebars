@@ -27,13 +27,13 @@
                         }
                         document.querySelector('#new-plant-title').value = ""
                         document.querySelector('#new-plant-caption').value = ""
-                        console.log(newPlant)
+                
                         fetch("/api/plant/", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                        body: JSON.stringify(newPlant)
+                            body: JSON.stringify(newPlant)
                         })
                     }
                 }
@@ -45,6 +45,6 @@
             </script>
             </input>
         </button>
-            <a href="/profile" id="create-plant" class="btn btn-primary">Check out your new post!</a>
+        <a href="/profile" id="create-plant" class="btn btn-primary">Check out your new post!</a>
     </div>
 </div>
