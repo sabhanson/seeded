@@ -27,28 +27,32 @@
           <img src="/assets/logo.png" height="100px" alt="seeded" />
         </a>
         <form class="form-inline my-2 my-lg-0 background-color" id="searchBar">
-          <input id='search-input' class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-          <button id='search-btn' class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
+          <input id='search-input' class="form-control mr-sm-2" type="text" placeholder="search for a user..." aria-label="Search" />
+          <button id='search-btn' class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
         </form>
-        <ul class="navbar-nav ml-auto">
-
+        <ul class="navbar-nav ml-auto gap-">
+          <li class="nav-item">
+            <button type="button" class="btn btn-style"><a href='/profile/newPlant'>+</a></button>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/about">About
-              <span class="sr-only">(current)</span></a>
+            <button type="button" class="btn btn-style">
+            <a href="/about">About</a>
+            </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <button type="button" class="btn btn-style">
+            <a href="/dashboard">Dashboard</a>
+            </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="logout-link" href="#">Logout</a>
+            <button type="button" class="btn btn-style">
+            <a href="/profile">Profile</a>
+            </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/profile">Profile</a>
-
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-light"><a href='/profile/newPlant'> +Add </a></button>
+            <button type="button" class="btn btn-style">
+            <a id="logout-link" href="#">Logout</a>
+            </button>
           </li>
         </ul>
       </div>

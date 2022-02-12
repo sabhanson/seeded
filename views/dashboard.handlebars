@@ -20,16 +20,17 @@
           <p class="card-text"><a class="upVote" data-plantid="{{id}}">🌱</a> {{upVote_counter}} uproots</p>
         </div>
         {{#each Comments}}
-        <div class="card-body all-comments" style="border: 2px solid black;">
+        <div class="card-body all-comments d-flex mt-1 mb-1" style="border: 2px solid black; justify-content:space-between; border-radius: 10px; background-color: var(--sagegreen);">
           <p class="card-text"><strong>{{User.username}}</strong>: {{content}}</p>
           <a class="trash-comment" href="#" data-commentid="{{id}}"><img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/></a>
         </div>
         {{/each}}
-        <form class="input-group mb-3 comment-form">
+        <form class="input-group mb-3 pt-2 comment-form">
           <input type="hidden" name="plant-id" value="{{id}}">
-          <textarea name = "comment-body" class="form-input"></textarea>
+          <input placeholder="enter a comment..." name="comment-body" class="form-input comment-input" type="text">
+          {{!-- <textarea name = "comment-body" class="form-input"></textarea> --}}
           <button
-            class="btn btn-outline-secondary"
+            class="comment-btn"
             type="submit"
             id="button-addon2"
           >Submit</button>
