@@ -2,7 +2,7 @@ const commentFormHandler = async function (event){
     event.preventDefault();
 
     const plantId = event.target.querySelector('input[name="plant-id"]').value;
-    const comment = event.target.querySelector('textarea[name="comment-body"]').value;
+    const comment = event.target.querySelector('input[name="comment-body"]').value;
 
     console.log(plantId)
     console.log(comment)

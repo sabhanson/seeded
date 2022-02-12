@@ -6,7 +6,56 @@
 --medbrown: #99621E;
 }
 
+* {
+    font-family: monospace;
+}
+
 body{
     background-color: var(--lightbrown);
     color: black;
+}
+
+.btn-style {
+    background-color: var(--medbrown);
+    color: white;
+    border: 1px solid white;
+    margin: .2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-style {
+    border-radius: 30px;
+}
+
+.form-header {
+    font-size: 1.5rem;
+}
+
+.input-style {
+   border-radius: 7px;
+   width: 300px;
+}
+
+.comment-input {
+    border-radius: 20px;
+    width: 85%;
+}
+
+.comment-btn {
+    width: 15%;
+    background-color: var(--darkgreen);
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.form-btn {
+    background-color: var(--darkgreen);
+    color: white;
+    border-radius: 10px;
+    width: 180px;
 }
