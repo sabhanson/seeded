@@ -14,6 +14,16 @@ body{
     background-color: var(--lightbrown);
 }
 
+.title-text {
+    padding: .5% 20% .5% 20%;
+    margin-bottom: 3%;
+    color: white;
+    background-color: var(--medbrown);
+    text-align: center;
+    font-size: 1.6rem;
+    box-shadow: 1px 1px 6px var(--medbrown);
+}
+
 .btn-style {
     background-color: var(--medbrown);
     color: white;
@@ -87,7 +97,7 @@ a {
 }
 
 .post-card {
-    margin: 8% 10% 0% 10%;
+    margin: 1% 10% 0% 10%;
     border: 4px solid black;
     border-radius: 15px;
     background-color: var(--sagegreen);
@@ -99,8 +109,41 @@ a {
     border-radius: 20px;
     box-shadow: 1px 1px 13px var(--medbrown);
     border: 2px solid black;
+    margin-bottom: 30px;
 }
 
 .navbar {
     justify-content: flex-end;
+}
+
+.upVote {
+    border-radius: 100px;
+    border: 1px solid black;
+    padding-left: 3px;
+}
+
+.upvote:hover {
+    opacity: 75%;
+}
+
+.username-style {
+    padding-top: 7%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+    opacity: 75%;
+}
+
+.trash-plant {
+    align-self: flex-end;
+    padding: 10px 15px 0px 0px;
+}
+
+.search-profile {
+    margin-top: 3rem;
 }
