@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const moment = require('moment')
 class Plant extends Model {}
 
 Plant.init({
@@ -26,7 +26,14 @@ Plant.init({
     upVote_counter:{
         type:DataTypes.INTEGER,
         allowNull: true
-    }
+    },
+    createdAt: {
+        type:DataTypes.DATE,
+//note here this is the guy that you are looking for                   
+      get() {
+            return moment(this.getDataValue('createdAt')).format('MM/DD/YYYY');
+        }
+    },
 },{
     sequelize
 })
