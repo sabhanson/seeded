@@ -4,37 +4,33 @@
   <header class="parallax-body">
     <img src="/assets/plants.png" class="background" />
     <img src="/assets/foreground-flower.png" class="foreground" />
-    <h1 class="title-header">Welcome!</h1>
+    <div class="dothis">
+      <h1 class="title-header">Seeded.</h1>
+      <p class="title-caption">an app about plants</p>
+      <img
+        class="circle"
+        src="/assets/landing-logo.png"
+        height="100px"
+        alt="seeded"
+      />
+    </div>
   </header>
   <section class="parallax-bottom">
-    <nav class="navbar navbar-expand-lg navbar-light background-color mx-auto col-sm-12 col-md-12 col-lg-12">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a href="/" class="navbar-brand">
-          <img src="/assets/logo.png" height="100px" alt="seeded" />
-        </a>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <button type="button" class="btn btn-style">
-              <a href="/about">About</a>
-            </button>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-style">
-              <a href="/login">Login</a>
-            </button>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-style">
-              <a href="/signup">Signup</a>
-            </button>
-          </li>
-        </ul>
+    <div class="d-flex justify-content-center">
+      <div class="landing-par col-sm-12 col-md-6 col-lg-6">
+        <p>Ready to share your plants with the world?<br />Click the button
+          below to get started!</p>
       </div>
-    </nav>
+    </div>
+    <div class="landing-signup-wrapper">
+      <button type="button" class="btn btn-style landing-signup">
+        <a href="/signup">Sign Up</a>
+      </button>
+    </div>
+    <div class="mx-auto text-center landing-login">
+      <a href="/login">Already have an account? Log In here!</a><br>
+      <a href="/about">Learn about the Dev Team here!</a>
+    </div>
   </section>
 </div>
 
