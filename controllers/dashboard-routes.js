@@ -13,6 +13,17 @@ router.get('/', withAuthFront, async (req, res) => {
     });
     const plants = plantData.map((plant) => plant.get({ plain: true }));
 
+//This renders the main feed for the session user. It will include all the plant posts in descending order from the creation date
+router.get('/', withAuthFront, async (req, res)=>{
+    try {
+        const plantData = await Plant.findAll({
+            include: [{model:Comment, include: [User]}, User],
+            order: [
+                ['id', 'DESC'],
+            ],
+        });
+        const plants = plantData.map((plant) => plant.get({ plain: true}));
+    console.log(plants)
     res.render("dashboard", {
       layout: "loggedin",
       plants: plants,
