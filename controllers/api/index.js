@@ -1,4 +1,4 @@
-//Router capabilities of express for controllers
+// Router capabilities of express for controllers
 const router = require("express").Router();
 const userRoutes = require("./user-routes.js");
 const plantRoutes = require("./plant-routes.js");

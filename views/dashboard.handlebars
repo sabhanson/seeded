@@ -3,44 +3,41 @@
 <h1 class="title-text">Welcome to the Community Garden!</h1>
 
 {{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
-  <div class="d-grid gap-5">
+<div class="d-grid gap-5">
 
-{{#each plants}}
-    {{! this is an individual plant card }}
-    <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
+  {{#each plants}}
+  {{! this is an individual plant card }}
+  <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
 
-      <div class="card plant-div">
-          <div class="username-style">
-          <h4>from <a href="/profile/{{User.id}}"><strong>{{User.username}}'s</strong></a> greenhouse</h4>
-          </div>
-        <div class="card-body post-card">
-          <h5>{{title}}</h5>
-          <img src='{{file_name}}' class="card-img-top" alt="..." />
-          <p class="card-text">{{caption}}</p>
-        </div>
-        <div class="card-body uproots">
-          <p class="uproot-style"><button class="upVote" data-plantid="{{id}}">🌱</button> {{upVote_counter}} uproots</p>
-        </div>
-        {{#each Comments}}
-        <div class="card-body all-comments comment-style d-flex mt-1 mb-1">
-          <p class="card-text"><a href="/profile/{{User.id}}"><strong>{{User.username}}</strong></a>: {{content}}</p>
-          <a class="trash-comment" href="#" data-commentid="{{id}}"><img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/></a>
-        </div>
-        {{/each}}
-        <form class="input-group comment-div mb-3 pt-2 comment-form">
-          <input type="hidden" name="plant-id" value="{{id}}">
-          <input placeholder="enter a comment..." name="comment-body" class="comment-input" type="text">
-          <button
-            class="comment-btn"
-            type="submit"
-            id="button-addon2"
-          >Submit</button>
-        </form>
-
+    <div class="card plant-div">
+      <div class="username-style">
+        <h4>from <a href="/profile/{{User.id}}"><strong>{{User.username}}'s</strong></a> greenhouse</h4>
       </div>
+      <div class="card-body post-card">
+        <h5>{{title}}</h5>
+        <img src='{{file_name}}' class="card-img-top" alt="..." />
+        <p class="card-text">{{caption}}</p>
+      </div>
+      <div class="card-body uproots">
+        <p class="uproot-style"><button class="upVote" data-plantid="{{id}}">🌱</button> {{upVote_counter}} uproots</p>
+      </div>
+      {{#each Comments}}
+      <div class="card-body all-comments comment-style d-flex mt-1 mb-1">
+        <p class="card-text"><a href="/profile/{{User.id}}"><strong>{{User.username}}</strong></a>: {{content}}</p>
+        <a class="trash-comment" href="#" data-commentid="{{id}}"><img
+            src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" /></a>
+      </div>
+      {{/each}}
+      <form class="input-group comment-div mb-3 pt-2 comment-form">
+        <input type="hidden" name="plant-id" value="{{id}}">
+        <input placeholder="enter a comment..." name="comment-body" class="comment-input" type="text">
+        <button class="comment-btn" type="submit" id="button-addon2">Submit</button>
+      </form>
+
     </div>
-{{/each}}
   </div>
-  <script src="/js/comment.js"></script>
-  <script src="/js/deleter.js"></script>
-  <script src="/js/upvote.js"></script>
+  {{/each}}
+</div>
+<script src="/js/comment.js"></script>
+<script src="/js/deleter.js"></script>
+<script src="/js/upvote.js"></script>

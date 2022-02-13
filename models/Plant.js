@@ -1,34 +1,35 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Plant extends Model {}
+class Plant extends Model { }
 
+// Creates the plant table
 Plant.init({
 
     title: {
-        type:DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-            len:[1,100]
+        validate: {
+            len: [1, 100]
         }
     },
     caption: {
-        type:DataTypes.STRING,
-        allowNull:false,
-        validate:{
-            len:[1,200]
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1, 200]
         }
     },
-    file_name: { 
-        type:DataTypes.STRING,
+    file_name: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
-    upVote_counter:{
-        type:DataTypes.INTEGER,
+    upVote_counter: {
+        type: DataTypes.INTEGER,
         allowNull: true
     }
-},{
+}, {
     sequelize
 })
 
-module.exports=Plant;
+module.exports = Plant;
