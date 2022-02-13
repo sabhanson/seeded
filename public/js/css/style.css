@@ -85,7 +85,7 @@ a {
 }
 
 .cloudinary-button {
-  background-color: var(--sagegreen) !important;
+  background-color:var(--sagegreen) !important;
 }
 
 .comment-style {
@@ -192,11 +192,40 @@ a {
   opacity: 75%;
 }
 
+.title-size {
+  font-size: 1.8rem;
+}
+
+.caption-size {
+  padding-top: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.timestamp {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.card-img-top {
+  border: 2px solid black;
+  border-radius: 20px;  
+}
+
+.new-plant-btn {
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
 .username-style {
   padding-top: 7%;
   padding-left: 10%;
   padding-right: 10%;
   text-decoration: none;
+}
+
+.username-style > h4 {
+  font-size: 2rem;
 }
 
 a:hover {
