@@ -6,7 +6,10 @@ router.get("/", (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-  res.render("landing");
+  res.render("landing",
+    {
+      layout: "landingp",
+    });
 });
 
 //Renders the about page and checks if user is logged in, if so, a different layout is used
@@ -42,10 +45,10 @@ router.get("/login", (req, res) => {
 
 //Route to handle if the user searches another user that does not exist
 router.get("/nouser", (req, res) => {
-  res.render("nouser"),
+  res.render("nouser",
     {
       layout: "loggedin",
-    };
+    });
 });
 
 module.exports = router;
