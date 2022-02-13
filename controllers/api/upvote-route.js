@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Plant } = require("../../models/");
 
-//This route adds to the uproot counter on the dashboard and profile
+// This route adds to the uproot counter on the dashboard and profile
 router.post("/:id", async (req, res) => {
   try {
     const plantUp = await Plant.increment(

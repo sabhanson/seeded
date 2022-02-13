@@ -1,14 +1,16 @@
 <div class="card mx-auto text-center form-style col-sm-12 col-md-6 col-lg-4">
+    {{!-- upload new plant details --}}
     <div class="form-header pt-3">
-      Add a plant to your nursery
+        Add a plant to your nursery
     </div>
     <div class="card-body d-grid gap-3 login-form justify-content-center">
         <div>
             <input type="text" id="new-plant-title" class="card-title" placeholder="plant's name"></input>
         </div>
         <div>
-            <input type="text" id="new-plant-caption" class="card-text" placeholder="write your story"></input>
+            <input type="text" id="new-plant-caption" class="card-text" placeholder="tell us about your plant!"></input>
         </div>
+        {{!-- cloudinary widget --}}
         <div class="justify-content-center pb-2">
             <button id="upload_widget" class="cloudinary-button">
                 <input src='/assets/Upload.png' class="card-img-top" type="image" id="new=plant-img">
@@ -39,12 +41,12 @@
                                 headers: {
                                     "Content-Type": "application/json"
                                 },
-                            body: JSON.stringify(newPlant)
+                                body: JSON.stringify(newPlant)
                             })
                         }
                     }
                     )
-    
+
                     document.getElementById("upload_widget").addEventListener("click", function () {
                         myWidget.open();
                     }, false);
