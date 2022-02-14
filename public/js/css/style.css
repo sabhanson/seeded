@@ -14,6 +14,37 @@ body {
   background-color: var(--lightbrown);
 }
 
+.carousel-caption {
+  text-shadow: 0 0 5px black;
+}
+
+.carousel {
+  margin-bottom: 5.5rem;
+}
+
+.about-par {
+  font-size: 1.2rem;
+  width: 100%;
+  padding-top: 1%;
+  color: white;
+  background-color: rgb(207, 177, 121);
+  border-radius: 20px;
+  text-align: center;
+  border: 4px double var(--darkgreen);
+  margin-bottom: 3rem;
+}
+
+.dev-team {
+  text-align: center;
+  /* background-color: var(--darkgreen); */
+  color: black;
+  /* padding: 4px; */
+  /* margin-left: 40%;
+  margin-right: 40%; */
+  margin-bottom: 2rem;
+  /* box-shadow: 1px 1px 6px black; */
+}
+
 .title-text {
   padding: 0.5% 20% 0.5% 20%;
   margin-bottom: 3%;
@@ -314,6 +345,9 @@ a:hover {
 }
 
 @media only screen and (max-width: 576px) {
+  .carousel {
+    margin-bottom: 7rem;
+  }
   .landing-par {
     margin-bottom: 1.5rem;
   }
@@ -352,6 +386,9 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .carousel {
+    margin-bottom: 20rem;
+  }
   .parallax-bottom {
     padding-bottom: 450px;
   }
