@@ -3,7 +3,7 @@
 <h1 class="title-text">Welcome to the Community Garden!</h1>
 
 {{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
-  <div class="d-grid gap-5">
+  <div class="card-parent d-grid gap-5">
 
 {{#each plants}}
     {{! this is an individual plant card }}
@@ -12,8 +12,7 @@
       <div class="card plant-div">
           <div class="username-style">
             {{!-- starter code for implementing a profile pic --}}
-            {{!-- <img src="/assets/megparties.jpg" alt="alt" style="border-radius: 50%; height: 50px; width: 50px"></a> --}}
-          <h4>from <a href="/profile/{{User.id}}"><strong>{{User.username}}'s</strong></a> greenhouse</h4>
+            <a href="/profile/{{User.id}}"><img class="user-image" src="{{User.file_name}}" alt="alt">    {{User.username}}</a>
           </div>
         <div class="card-body post-card">
           <h5 class="title-size">{{title}}</h5>
@@ -37,7 +36,7 @@
             class="comment-btn"
             type="submit"
             id="button-addon2"
-          >Submit</button>
+          >submit</button>
         </form>
 
       </div>
