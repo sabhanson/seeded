@@ -34,6 +34,11 @@ User.init(
         isEmail: true,
       },
     },
+    file_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: '/assets/default.jpeg',
+    },
   },
   {
     sequelize,

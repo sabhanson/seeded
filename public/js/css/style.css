@@ -74,7 +74,8 @@ a {
   background-color: var(--darkgreen);
   color: white;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: .8rem;
+  white-space: nowrap;
 }
 
 .form-btn {
@@ -148,7 +149,7 @@ a {
   z-index: -1;
 }
 
-.dothis {
+.landing-header {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -161,6 +162,10 @@ a {
   text-shadow: 0 0 5px black;
   width: 100%;
   margin-bottom: 0;
+}
+
+.login-link {
+  padding-bottom: 3rem;
 }
 
 .title-caption {
@@ -222,10 +227,13 @@ a {
   padding-left: 10%;
   padding-right: 10%;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.username-style > h4 {
-  font-size: 2rem;
+.user-image {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 
 a:hover {
@@ -273,7 +281,7 @@ a:hover {
     margin-top: 1%;
     width: fit-content;
     height: auto;
-    font-size: 2rem;
+    font-size: 1.6rem;
     border-radius: 20px;
 }
 
@@ -293,13 +301,75 @@ a:hover {
 }
 
 .landing-login {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: black;
 }
 
-footer {
-    display: flex;
-    background-color: var(--medbrown);
-    justify-content: flex-end;
-    align-self: flex-end;
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 100px;
+  color: var(--medbrown);
+}
+
+@media only screen and (max-width: 576px) {
+  .landing-par {
+    margin-bottom: 1.5rem;
+  }
+  .landing-signup {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  .landing-login {
+    font-size: .9rem;
+    padding-bottom: 3rem;
+  }
+  .title-text {
+    font-size: 1.3rem;
+  }
+  .username-style {
+    font-size: 1rem;
+  }
+
+  .user-image {
+    height: 30px;
+    width: 30px;
+  }
+
+  .title-size {
+    font-size: 1.2rem;
+  }
+  .caption-size {
+    font-size: 1rem;
+  }
+  .timestamp, .uproot-style {
+    font-size: .8rem;
+  }
+  .copyright {
+    font-size: .65rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .parallax-bottom {
+    padding-bottom: 450px;
+  }
+  .landing-par {
+    margin-bottom: 2rem;
+  }
+  .landing-signup {
+    font-size: 1.5rem;
+  }
+  .landing-login {
+    font-size: 1.1rem;
+    margin-top: .9rem;
+    margin-bottom: .9rem;
+  }
+  .card-parent {
+    margin-bottom: 10rem;
+  }
+  .copyright {
+    font-size: .65rem;
+  }
 }
