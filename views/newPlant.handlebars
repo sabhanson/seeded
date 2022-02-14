@@ -1,18 +1,17 @@
 
+<h1 class="title-text">Add a New Plant</h1>
+
 <div class="card mx-auto text-center form-style col-sm-12 col-md-6 col-lg-4">
-    <div class="form-header pt-3">
-      Add a plant to your nursery
-    </div>
     <div class="card-body d-grid gap-3 login-form justify-content-center">
         <div>
-            <input type="text" id="new-plant-title" class="card-title input-style" placeholder="plant's name"></input>
+            <input type="text" id="new-plant-title" class="card-title input-style" placeholder="plant's name (required)"></input>
         </div>
         <div>
-            <input type="text" id="new-plant-caption" class="card-text input-style" placeholder="tell us about your plant!"></input>
+            <input type="text" id="new-plant-caption" class="card-text input-style" placeholder="tell us about your plant! (required)"></input>
         </div>
         <div class="justify-content-center pb-2">
             <button id="upload_widget" class="cloudinary-button">
-                <input src='/assets/Upload.png' class="card-img-top" type="image" id="new=plant-img">
+                <input src='/assets/upload-plant.png' class="card-img-top" type="image" id="new=plant-img">
                 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
                 <script type="text/javascript">
                     var myWidget = cloudinary.createUploadWidget({
@@ -34,7 +33,6 @@
                             }
                             document.querySelector('#new-plant-title').value = ""
                             document.querySelector('#new-plant-caption').value = ""
-                            console.log(newPlant)
                             fetch("/api/plant/", {
                                 method: "POST",
                                 headers: {
@@ -52,7 +50,9 @@
                 </script>
                 </input>
             </button>
-            <a href="/profile" id="create-plant" class="btn btn-style new-plant-btn">Check out your new plant!</a>
         </div>
     </div>
+</div>
+<div class="d-flex justify-content-center">
+    <a href="/profile" id="create-plant" class="btn btn-style new-plant-btn">Check out your new plant!</a>
 </div>

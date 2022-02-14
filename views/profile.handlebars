@@ -1,6 +1,6 @@
 <h1 class="title-text">Welcome to Your Greenhouse</h1>
 {{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
-<div class="d-grid gap-5">
+<div class="card-parent d-grid gap-5">
   {{#each user.Plants}}
     {{! this is the basic card template to render each plant post }}
     <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
@@ -44,7 +44,7 @@
             class="comment-btn"
             type="submit"
             id="button-addon2"
-          >Submit</button>
+          >submit</button>
         </form>
 
       </div>
