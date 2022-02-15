@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 router.get("/about", (req, res) => {
   if (req.session.loggedIn) {
     res.render("about", {
-      layout: "loggedin",
+      layout: "dashboardlayout",
     });
   } else {
     res.render("about");
@@ -47,7 +47,7 @@ router.get("/login", (req, res) => {
 router.get("/nouser", (req, res) => {
   res.render("nouser",
     {
-      layout: "loggedin",
+      layout: "dashboardlayout",
     });
 });
 

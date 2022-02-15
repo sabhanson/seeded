@@ -1,123 +1,48 @@
-<h1 class="title-text">Sign Up</h1>    
-    
+<h1 class="title-text">Sign Up</h1>
+
 <div class="card mx-auto text-center form-style col-sm-12 col-md-6 col-lg-4">
-    <div class="card-body d-grid gap-3 login-form justify-content-center">
-            <div>
-              <input class="input-style" type="text" placeholder="enter your username (required)" id="username-input-signup" />
-            </div>
-            <div>
-                <input class="input-style" type="text" placeholder="enter your email (required)" id="email-input-signup" />
-            </div>
-            <div>
-              <input class="input-style" type="password" placeholder="enter your password (required)" id="password-input-signup" />
-            </div>
-            <div>
-                <input class="input-style" type="password" placeholder="confirm your password (required)" id="passwordcheck-input-signup" />
-            </div>
-        <div class="justify-content-center pb-2">
-            <button id="upload_widget" class="cloudinary-button">
-                <input src='/assets/upload-avatar.png' class="card-img-top" type="image" id="new=plant-img">
-                <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    var myWidget = cloudinary.createUploadWidget({
-                        cloudName: 'megs425',
-                        uploadPreset: 'btvewbfq',
-                        cropping: true,
-                        croppingAspectRatio: 1,
-                        showSkipCropButton: false,
-                    }, (error, result) => {
-                        console.log(error, result)
-                        if (!error && result && result.event === "success") {
-                            const username = document.querySelector('#username-input-signup').value
-                            const password = document.querySelector('#password-input-signup').value
-                            const email = document.querySelector('#email-input-signup').value
-                            const newUser = {
-                                username: username,
-                                password: password,
-                                email: email,
-                                file_name: result.info.url,
-                            }
-                            fetch("/api/user/signup/", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json"
-                                },
-                            body: JSON.stringify(newUser)
-                            })
-                        }
-                    }
-                    )
-    
-                    document.getElementById("upload_widget").addEventListener("click", function () {
-                        myWidget.open();
-                    }, false);
-                </script>
-                </input>
-            </button>
-        </div>
-        <div class="justify-content-center pb-2">
-          <a href="/profile">
-              <button type="submit" id="signup-btn" class="btn form-btn" >Sign Up</button>
-          </a>
-        </div>
+  <div class="card-body d-grid gap-3 login-form justify-content-center">
+    <div>
+      <input
+        class="input-style"
+        type="text"
+        placeholder="enter your username (required)"
+        id="username-input-signup"
+      />
     </div>
+    <div>
+      <input
+        class="input-style"
+        type="text"
+        placeholder="enter your email (required)"
+        id="email-input-signup"
+      />
+    </div>
+    <div>
+      <input
+        class="input-style"
+        type="password"
+        placeholder="enter your password (required)"
+        id="password-input-signup"
+      />
+    </div>
+    <div>
+      <input
+        class="input-style"
+        type="password"
+        placeholder="confirm your password (required)"
+        id="passwordcheck-input-signup"
+      />
+    </div>
+    <div class="justify-content-center pb-2">
+      <a href="/profile">
+        <button type="submit" id="signup-btn" class="btn form-btn">Sign Up</button>
+      </a>
+    </div>
+  </div>
 </div>
-    <div class="mx-auto text-center login-link">
-        <a href="/login">Already have an account? Log In here!</a>
-    </div>
+<div class="mx-auto text-center login-link">
+  <a href="/login">Already have an account? Log In here!</a>
+</div>
 
 <script src="/js/signup.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <h1 class="title-text">Sign Up</h1>    
-    
-    <div class="card mx-auto text-center form-style col-sm-12 col-md-6 col-lg-4 ">
-        <div class="card-body d-grid gap-3 background-color">
-            <div>
-              <input class="input-style" type="text" placeholder="enter your username..." id="username-input-signup" />
-            </div>
-            <div>
-                <input class="input-style" type="text" placeholder="enter your email..." id="email-input-signup" />
-            </div>
-            <div>
-              <input class="input-style" type="password" placeholder="enter your password..." id="password-input-signup" />
-            </div>
-            <div>
-                <input class="input-style" type="password" placeholder="confirm your password..." id="passwordcheck-input-signup" />
-            </div>
-            <div class="justify-content-center pb-2">
-              <button type="submit" id="signup-btn" class="btn form-btn" >Sign Up</button>
-            </div>
-        </div>
-    </div>
-    <div class="mx-auto text-center">
-        <a href="/login">Already have an account? Log In here!</a>
-    </div>
-
-
-<script src="/js/signup.js"></script> --}}

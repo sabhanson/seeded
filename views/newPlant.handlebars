@@ -1,6 +1,7 @@
 
 <h1 class="title-text">Add a New Plant</h1>
 
+
 <div class="card mx-auto text-center form-style col-sm-12 col-md-6 col-lg-4">
     <div class="card-body d-grid gap-3 login-form justify-content-center">
         <div>
@@ -20,6 +21,7 @@
                         cropping: true,
                         croppingAspectRatio: 1,
                         showSkipCropButton: false,
+                        sources: ["local", "camera"]
                     }, (error, result) => {
                         console.log(error, result)
                         if (!error && result && result.event === "success") {
