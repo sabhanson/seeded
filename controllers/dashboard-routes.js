@@ -14,7 +14,7 @@ router.get('/', withAuthFront, async (req, res)=>{
         const plants = plantData.map((plant) => plant.get({ plain: true}));
     console.log(plants)
     res.render("dashboard", {
-      layout: "loggedin",
+      layout: "dashboardlayout",
       plants: plants,
     });
   } catch (err) {
