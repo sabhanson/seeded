@@ -26,7 +26,7 @@ body {
   font-size: 1.2rem;
   width: 100%;
   padding-top: 1%;
-  color: white;
+  color: black;
   background-color: rgb(207, 177, 121);
   border-radius: 20px;
   text-align: center;
@@ -408,5 +408,8 @@ a:hover {
   }
   .copyright {
     font-size: .65rem;
+  }
+  .about-par {
+    font-size: 1rem;
   }
 }
