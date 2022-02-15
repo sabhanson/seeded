@@ -25,6 +25,7 @@
                         cropping: true,
                         croppingAspectRatio: 1,
                         showSkipCropButton: false,
+                        sources: ["local", "camera"]
                     }, (error, result) => {
                         console.log(error, result)
                         if (!error && result && result.event === "success") {
