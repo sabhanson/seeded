@@ -1,6 +1,35 @@
 <h1 class="title-text">Welcome to Your Greenhouse</h1>
+  <input type="hidden" name="user-id" value="{{user.id}}"> 
 {{! this is the main div that contains all plant cards, gap of 5 to create margins between the cards }}
 <div class="card-parent d-grid gap-5">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <button id="upload_widget" class="cloudinary-button">
+    <input src='/assets/upload-avatar.png' class="card-img-top" type="image" id="new=plant-img">
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    </input>
+</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   {{#each user.Plants}}
     {{! this is the basic card template to render each plant post }}
     <div class="mx-auto col-sm-12 col-md-10 col-lg-4">
@@ -54,3 +83,4 @@
 <script src="/js/comment.js"></script>
 <script src="/js/deleter.js"></script>
 <script src="/js/upvote.js"></script>
+<script src="/js/avatarUpdate.js"></script>
