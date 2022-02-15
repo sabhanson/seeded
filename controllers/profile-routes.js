@@ -29,9 +29,22 @@ router.get("/", async (req, res) => {
 
 // Route for the UI to add a plant
 router.get("/newPlant", async (req, res) => {
-  res.render("newPlant", {
-    layout: "loggedin",
-  });
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+      where: {
+        userId: req.session.userId,
+      },
+    });
+
+    const user = userData.get({ plain: true });
+    res.render("newPlant", {
+      layout: "dashboardlayout",
+      user: user,
+    });
+  } catch (err) {
+    console.log(err);
+    res.redirect("login");
+  }
 });
 
 // Rendering the profile of a user other than the session user
@@ -51,7 +64,7 @@ router.get("/:id", async (req, res) => {
 
     const user = userData.get({ plain: true });
     res.render("searchprofile", {
-      layout: "loggedin",
+      layout: "dashboardlayout",
       user: user,
     });
   } catch (err) {
