@@ -14,6 +14,26 @@ router.get("/userlookup", async (req, res) => {
   }
 });
 
+router.put("/avatarupdate/:id", (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ msg: "You can't update someone else's picture" });
+  }
+  User.findByPk(req.params.id).then(foundUser => {
+    User.update(
+      {
+        file_name: req.body.file_name
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(data => {
+      return res.json(data);
+    });
+  });
+});
+
 // This route logs in an existing user
 router.post("/signup", async (req, res) => {
   try {
