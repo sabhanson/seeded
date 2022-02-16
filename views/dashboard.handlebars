@@ -12,11 +12,11 @@
       <div class="card plant-div">
           <div class="username-style">
             {{!-- starter code for implementing a profile pic --}}
-            <a href="/profile/{{User.id}}"><img class="user-image" src="{{User.file_name}}" alt="alt">    {{User.username}}</a>
+            <a href="/profile/{{User.id}}"><img class="user-image" src="{{User.file_name}}" alt="User's profile picture">    {{User.username}}</a>
           </div>
         <div class="card-body post-card">
           <h5 class="title-size">{{title}}</h5>
-          <img src='{{file_name}}' class="card-img-top" alt="..." />
+          <img src='{{file_name}}' class="card-img-top" alt="image of a user's plant" />
           <p class="card-text caption-size">{{caption}}</p><hr>
           <p class="timestamp">Germinated on: {{createdAt}}</p>
         </div>
@@ -26,7 +26,7 @@
         {{#each Comments}}
         <div class="card-body all-comments comment-style d-flex mt-1 mb-1">
           <p class="card-text"><a href="/profile/{{User.id}}"><strong>{{User.username}}</strong></a>: {{content}}</p>
-          <a class="trash-comment" href="#" data-commentid="{{id}}"><img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/></a>
+          <a class="trash-comment" href="{{Plant.id}}" data-commentid="{{id}}"><img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" alt='image of trash can'/></a>
         </div>
         {{/each}}
         <form class="input-group comment-div mb-3 pt-2 comment-form">
