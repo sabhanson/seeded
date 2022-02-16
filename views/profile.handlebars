@@ -31,7 +31,7 @@
         </a>
         <div class="card-body post-card">
           <h5 class="title-size">{{title}}</h5>
-          <img src='{{file_name}}' class="card-img-top" alt="..." />
+          <img src='{{file_name}}' class="card-img-top" alt="photo of a plant you have uploaded" />
           <p class="card-text caption-size">{{caption}}</p><hr>
           <p class="timestamp">Germinated on: {{createdAt}}</p>
         </div>
@@ -48,8 +48,8 @@
             <p class="card-text"><a href="/profile/{{User.id}}"><strong
                 >{{User.username}}</strong></a>:
               {{content}}</p>
-            <a class="trash-comment" href="#" data-commentid="{{id}}"><img
-                src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"
+            <a class="trash-comment" href="{{Plant.id}}" data-commentid="{{id}}"><img
+                src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" alt = 'image of a trash can'
               /></a>
           </div>
         {{/each}}
